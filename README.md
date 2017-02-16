@@ -65,6 +65,7 @@ Still to do
 -----------
 
 - Add depends on java role for java8 installation as separate usage
+- Move out java binary privileged flag into dedicated java role
 - Add RedHat compatibility
 - Must find a way to not install plugins each time (list output check)
 - When ansible 2.3 available widely, use logstash_plugins module

@@ -29,7 +29,6 @@
   notify:
     - restart logstash
 
-# FIXME, add setcap to java binary if requested
 - name: Allow logstash to bind privileged ports
   capabilities:
     path: /usr/lib/jvm/default-java/jre/bin/java
