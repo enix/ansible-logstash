@@ -10,7 +10,6 @@ Requirements
 Supported targets:
 
 - Debian 8 "Jessie"
-- RedHat EL 6,7
 - ...
 
 
@@ -54,6 +53,7 @@ Still to do
 -----------
 
 - Add depends on java role for java8 installation
+- Add RedHat compatibility
 
 
 Changelog
