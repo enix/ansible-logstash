@@ -20,6 +20,7 @@ This roles comes preloaded with almost every available default. You can override
 
 - `logstash_plugins: []` - list of logstash plugins to install.
 - `logstash_options: ""` - block of options to append to logstash.yml.
+- `logstash_longstartupworkaround: false` - enable the long java startup workaround (Change the entropy source to urandom)
 
 Dependencies
 ------------
@@ -49,6 +50,7 @@ And add it to your play's roles:
             queue.type: persisted
             path.queue: /var/lib/logstash/queue
             queue.max_bytes: 4gb
+          logstash_longstartupworkaround: true
 
 
 You can also use the role as a playbook. You will be asked which hosts to provision, and you can further configure the play by using `--extra-vars`.

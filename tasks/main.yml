@@ -8,8 +8,6 @@
 #- include: redhat.yml
 #  when: ansible_os_family == 'RedHat'
 
-
-# FIXME, add configuration templating
 - name: Configure logstash.yml
   blockinfile:
     block: "{{ logstash_options }}"
@@ -17,6 +15,13 @@
     dest: /etc/logstash/logstash.yml
   notify:
     - restart logstash
+
+- name: Configure java long startup workaround
+  lineinfile:
+    backup: yes
+    line: '-Djava.security.egd=file:/dev/./urandom'
+    dest: /etc/logstash/jvm.options
+    state: "{{ logstash_longstartupworkaround | ternary('present','absent') }}"
 
 - name: Install Logstash Plugins
   command: /usr/share/logstash/bin/logstash-plugin install --no-verify {{ item.plugin_name }}
