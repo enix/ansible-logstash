@@ -1,5 +1,12 @@
 ---
 
+# To be replaced by proper java role
+- name: Install java
+  apt:
+    name: default-jre-headless
+    state: latest
+
+
 - name: Install Logstash
   apt:
     name: logstash
