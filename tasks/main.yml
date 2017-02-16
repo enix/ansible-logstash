@@ -8,13 +8,25 @@
 #- include: redhat.yml
 #  when: ansible_os_family == 'RedHat'
 
+
 # FIXME, add configuration templating
+- name: Configure logstash.yml
+  blockinfile:
+    block: "{{ logstash_options }}"
+    backup: yes
+    dest: /etc/logstash/logstash.yml
+  notify:
+    - restart logstash
 
 - name: Install Logstash Plugins
   command: /usr/share/logstash/bin/logstash-plugin install --no-verify {{ item.plugin_name }}
   with_items: "{{ logstash_plugins }}"
   notify:
     - restart logstash
+
+# FIXME, add setcap to java binary if requested
+# setcap cap_net_bind_service=+epi /usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/bin/java
+
 
 - name: Enable Logstash service
   service: name=logstash enabled=yes state=started

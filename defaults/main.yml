@@ -2,3 +2,4 @@
 # defaults file for $roletemplate
 
 logstash_plugins: []
+logstash_options: ""

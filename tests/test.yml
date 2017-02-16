@@ -3,5 +3,7 @@
   roles:
 #    - role-template # official one
     - role: ../../ansible-logstash    # work using vagrant tests
-      logstash_plugins:
-      - { plugin_name: "logstash-output-null" }
+#      logstash_plugins:
+#      - { plugin_name: "logstash-output-null" }
+#      logstash_options: |
+#        queue.max_bytes: 512mb
