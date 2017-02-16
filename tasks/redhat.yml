@@ -1,0 +1,8 @@
+---
+
+- name: Install Logstash
+  yum:
+    name: logstash
+    state: "{{ logstash_package_state }}"
+  notify:
+    - restart logstash

@@ -52,7 +52,7 @@ You can also use the role as a playbook. You will be asked which hosts to provis
 Still to do
 -----------
 
-- Add depends on java role for java8 installation
+- Add depends on java role for java8 installation as separate usage
 - Add RedHat compatibility
 
 

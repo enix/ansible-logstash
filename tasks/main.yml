@@ -1,2 +1,17 @@
 ---
 # tasks file for $roletemplate
+
+- include: debian.yml
+  when: ansible_os_family == 'Debian'
+
+# Add RedHat when needed
+#- include: redhat.yml
+#  when: ansible_os_family == 'RedHat'
+
+# FIXME, add configuration templating
+
+# FIXME, add plugins installation
+
+
+- name: Enable Logstash service
+    service: name=logstash enabled=yes state=started
