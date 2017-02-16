@@ -2,4 +2,6 @@
 - hosts: test
   roles:
 #    - role-template # official one
-#    - '../../.'    # work using vagrant tests
+    - role: ../../ansible-logstash    # work using vagrant tests
+      logstash_plugins:
+      - { plugin_name: "logstash-output-null" }

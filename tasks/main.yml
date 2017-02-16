@@ -10,8 +10,11 @@
 
 # FIXME, add configuration templating
 
-# FIXME, add plugins installation
-
+- name: Install Logstash Plugins
+  command: /usr/share/logstash/bin/logstash-plugin install --no-verify {{ item.plugin_name }}
+  with_items: "{{ logstash_plugins }}"
+  notify:
+    - restart logstash
 
 - name: Enable Logstash service
-    service: name=logstash enabled=yes state=started
+  service: name=logstash enabled=yes state=started

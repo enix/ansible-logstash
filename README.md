@@ -18,7 +18,7 @@ Role Variables
 
 This roles comes preloaded with almost every available default. You can override each one in your hosts/group vars, in your inventory, or in your play. See the annotated defaults in `defaults/main.yml` for help in configuration. All provided variables start with `logstash_`.
 
-#- `$role_` - desc
+- `logstash_plugins: []` - list of logstash plugins to install.
 
 Dependencies
 ------------
@@ -41,7 +41,9 @@ And add it to your play's roles:
 
     - hosts: servers
       roles:
-        - { $role: username.rolename, x: 42 }
+        - role: logstash
+          logstash_plugins:
+            - { plugin_name: "logstash-output-lumberjack" }
 
 
 You can also use the role as a playbook. You will be asked which hosts to provision, and you can further configure the play by using `--extra-vars`.
@@ -54,7 +56,7 @@ Still to do
 
 - Add depends on java role for java8 installation as separate usage
 - Add RedHat compatibility
-
+- Must find a way to not install plugins each time (list output check)
 
 Changelog
 ---------
