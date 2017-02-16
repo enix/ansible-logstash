@@ -1,7 +1,7 @@
-Enix/$ROLE for Ansible
+Enix/logstash
 =================
 
-A role for deploying and configuring [$ROLE](http://$role.com) and extensions on unix hosts using [Ansible](http://www.ansible.com/).
+A role for deploying and configuring [Logstash](https://www.elastic.co/products/logstash) on unix hosts using [Ansible](http://www.ansible.com/).
 
 
 Requirements
@@ -9,7 +9,6 @@ Requirements
 
 Supported targets:
 
-- Ubuntu 12.04 "Precise Pangolin"
 - Debian 8 "Jessie"
 - RedHat EL 6,7
 - ...
@@ -18,26 +17,16 @@ Supported targets:
 Role Variables
 --------------
 
-This roles comes preloaded with almost every available default. You can override each one in your hosts/group vars, in your inventory, or in your play. See the annotated defaults in `defaults/main.yml` for help in configuration. All provided variables start with `$role_`.
+This roles comes preloaded with almost every available default. You can override each one in your hosts/group vars, in your inventory, or in your play. See the annotated defaults in `defaults/main.yml` for help in configuration. All provided variables start with `logstash_`.
 
-- `$role_` - desc
+#- `$role_` - desc
 
 Dependencies
 ------------
 
-- None
+Ansible roles, can be pulled by ansible-galaxy or by hand in roles/
 
-Extra
------
-
-Available extensions (under a switch):
-
-- Extension - `$role_extension`
-- ...
-
-Callable tasks:
-
-- `task`: ...
+- `Enix/elastic-repo`: https://gitlab.enix.org/ansible/ansible-elastic-repo.git.
 
 
 Usage
@@ -45,7 +34,7 @@ Usage
 
 Clone this repo into your roles directory:
 
-    $ git clone https://gitlab.enix.org/ansible/ansible-$role.git roles/$role
+    $ git clone https://gitlab.enix.org/ansible/ansible-logstash.git roles/logstash
 
 Or use Ansible galaxy requirements.yml
 
@@ -64,7 +53,7 @@ You can also use the role as a playbook. You will be asked which hosts to provis
 Still to do
 -----------
 
-- Write the role itself, for one
+- Add depends on java role for java8 installation
 
 
 Changelog
@@ -77,9 +66,9 @@ Initial version.
 License
 -------
 
-BSD/GPL/Other
+BSD
 
 Author Information
 ------------------
 
-XXXX.YYY <XXXX@enix.fr> - http://www.enix.fr
+Laurent.CORBES <laurent.corbes@enix.fr> - http://www.enix.fr

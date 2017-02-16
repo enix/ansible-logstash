@@ -1,0 +1,5 @@
+---
+
+# elastic-repo from enix
+- src: git+ssh://git@gitlab.enix.org/ansible/ansible-elastic-repo.git
+  name: elastic-repo
