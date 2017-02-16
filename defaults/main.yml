@@ -4,3 +4,4 @@
 logstash_plugins: []
 logstash_options: ""
 logstash_longstartupworkaround: false
+logstash_bindprivileged: false

@@ -30,7 +30,13 @@
     - restart logstash
 
 # FIXME, add setcap to java binary if requested
-# setcap cap_net_bind_service=+epi /usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/bin/java
+- name: Allow logstash to bind privileged ports
+  capabilities:
+    path: /usr/lib/jvm/default-java/jre/bin/java
+    capability: cap_net_bind_service+epi
+    state: "{{ logstash_bindprivileged | ternary('present','absent') }}"
+  notify:
+  - restart logstash
 
 
 - name: Enable Logstash service

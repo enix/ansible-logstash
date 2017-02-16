@@ -8,3 +8,4 @@
 #      logstash_options: |
 #        queue.max_bytes: 512mb
 #      logstash_longstartupworkaround: true
+#      logstash_bindprivileged: true
