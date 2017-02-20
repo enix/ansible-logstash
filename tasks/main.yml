@@ -46,6 +46,8 @@
     group: root
     mode: 0644
   when: logstash_configuration != ""
+  notify:
+  - restart logstash
 
 - name: Enable Logstash service
   service: name=logstash enabled=yes state=started
