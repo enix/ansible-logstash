@@ -22,7 +22,7 @@ This roles comes preloaded with almost every available default. You can override
 - `logstash_options: ""` - block of options to append to logstash.yml.
 - `logstash_longstartupworkaround: false` - enable the long java startup workaround (Change the entropy source to urandom)
 - `logstash_bindprivileged: false` - allow logstash to listen on privileged ports (needed for syslog reception on ports 514)
-
+- `logstash_configuration: ""` - directory with configuration stored, copied into /etc/logstash/conf.d/ (must have a trailing /).
 
 Dependencies
 ------------
@@ -54,6 +54,7 @@ And add it to your play's roles:
             queue.max_bytes: 4gb
           logstash_longstartupworkaround: true
           logstash_bindprivileged: true
+          logstash_configuration: "files/logstash.d/"
 
 
 You can also use the role as a playbook. You will be asked which hosts to provision, and you can further configure the play by using `--extra-vars`.

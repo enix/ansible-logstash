@@ -37,6 +37,15 @@
   notify:
   - restart logstash
 
+- name: Copy Logstash configuration
+  copy:
+    src: "{{ logstash_configuration }}"
+    dest: /etc/logstash/conf.d/
+    backup: yes
+    owner: root
+    group: root
+    mode: 0644
+  when: logstash_configuration != ""
 
 - name: Enable Logstash service
   service: name=logstash enabled=yes state=started
