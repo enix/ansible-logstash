@@ -48,7 +48,7 @@ And add it to your play's roles:
         - role: logstash
           logstash_plugins:
             - { plugin_name: "logstash-output-lumberjack" }
-          logstash_options:
+          logstash_options: |
             queue.type: persisted
             path.queue: /var/lib/logstash/queue
             queue.max_bytes: 4gb
@@ -65,11 +65,13 @@ You can also use the role as a playbook. You will be asked which hosts to provis
 Still to do
 -----------
 
-- Add depends on java role for java8 installation as separate usage
-- Move out java binary privileged flag into dedicated java role
+- Add depends on Java role for java8 installation as separate usage
+- Move out Java binary privileged flag into dedicated Java role
 - Add RedHat compatibility
 - Must find a way to not install plugins each time (list output check)
-- When ansible 2.3 available widely, use logstash_plugins module
+- When Ansible 2.3 available widely, use logstash_plugins module
+- Add support for template configuration (either a full directory or filelisting)
+- Use synchronize instead of copy for configuration to support deletion of files
 
 Changelog
 ---------
