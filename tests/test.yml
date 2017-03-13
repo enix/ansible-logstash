@@ -10,3 +10,4 @@
 #      logstash_longstartupworkaround: true
 #      logstash_bindprivileged: true
 #      logstash_configuration: "files/logstash.d/"
+#      logstash_configurationtemplates: [ 'test.conf.j2' ]

@@ -22,7 +22,8 @@ This roles comes preloaded with almost every available default. You can override
 - `logstash_options: ""` - block of options to append to logstash.yml.
 - `logstash_longstartupworkaround: false` - enable the long java startup workaround (Change the entropy source to urandom)
 - `logstash_bindprivileged: false` - allow logstash to listen on privileged ports (needed for syslog reception on ports 514)
-- `logstash_configuration: ""` - directory with configuration stored, copied into /etc/logstash/conf.d/ (must have a trailing /).
+- `logstash_configuration: ""` - directory with configuration stored, copied into `/etc/logstash/conf.d/` (must have a trailing /).
+- `logstash_configurationtemplates: ""` - list of files to template and copy to `/etc/logstash/conf.d/` (Apllied after copying the base configuration).
 
 Dependencies
 ------------
@@ -70,7 +71,6 @@ Still to do
 - Add RedHat compatibility
 - Must find a way to not install plugins each time (list output check)
 - When Ansible 2.3 available widely, use logstash_plugins module
-- Add support for template configuration (either a full directory or filelisting)
 - Use synchronize instead of copy for configuration to support deletion of files
 
 Changelog

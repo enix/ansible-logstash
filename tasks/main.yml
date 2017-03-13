@@ -49,5 +49,17 @@
   notify:
   - restart logstash
 
+- name: Template Additional Logstash configuration
+  template:
+    src: "{{ item }}"
+    dest: /etc/logstash/conf.d/{{ item | basename | regex_replace('.j2','') }}
+    backup: yes
+    owner: root
+    group: root
+    mode: 0644
+  with_items: "{{ logstash_configurationtemplates }}"
+  notify:
+  - restart logstash
+
 - name: Enable Logstash service
   service: name=logstash enabled=yes state=started
