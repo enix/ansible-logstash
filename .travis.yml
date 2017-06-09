@@ -53,11 +53,12 @@ script:
 
   # Ansible version check.
   - 'docker exec --tty "$(cat ${container_id})" env ANSIBLE_FORCE_COLOR=true ansible --version'
+  # Install requirements
+  - 'docker exec "$(cat ${container_id})" env ANSIBLE_FORCE_COLOR=true ansible-galaxy install -v -r /etc/ansible/roles/role_under_test/requirements.yml'
+
   # Ansible syntax check.
   - 'docker exec --tty "$(cat ${container_id})" env ANSIBLE_FORCE_COLOR=true ansible-playbook /etc/ansible/roles/role_under_test/tests/test.yml --syntax-check'
 
-  # Install requirements
-  - 'docker exec "$(cat ${container_id})" env ANSIBLE_FORCE_COLOR=true ansible-galaxy install -v -r /etc/ansible/roles/role_under_test/requirements.yml'
   # Test role.
   - 'docker exec "$(cat ${container_id})" env ANSIBLE_FORCE_COLOR=true ansible-playbook -vvv --connection=local -i /etc/ansible/roles/role_under_test/tests/inventory /etc/ansible/roles/role_under_test/tests/test.yml'
 

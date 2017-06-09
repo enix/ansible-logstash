@@ -6,8 +6,8 @@ variables:
 .ansible_test_template: &ansible_test
   script:
     - ansible --version
-    - ansible-playbook tests/test.yml --syntax-check
     - ansible-galaxy install -v -r requirements.yml
+    - ansible-playbook tests/test.yml --syntax-check
     - ansible-playbook -vvv --connection=local tests/test.yml
     - idempotence=$(mktemp)
     - ansible-playbook -vvv --connection=local tests/test.yml | tee ${idempotence}
