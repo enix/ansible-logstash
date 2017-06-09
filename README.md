@@ -75,6 +75,7 @@ Still to do
 - Must find a way to not install plugins each time (list output check)
 - When Ansible 2.3 available widely, use logstash_plugins module
 - Use synchronize instead of copy for configuration to support deletion of files
+- Change variables to logstash__ 
 
 Changelog
 ---------
