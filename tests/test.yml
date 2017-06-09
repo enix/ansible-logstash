@@ -2,12 +2,12 @@
 - hosts: test
   roles:
 #    - role-template # official one
-    - role: ../../ansible-logstash    # work using vagrant tests
+    - role: '../../.'    # work using vagrant tests
 #      logstash_plugins:
 #      - { plugin_name: "logstash-output-null" }
-#      logstash_options: |
-#        queue.max_bytes: 512mb
-#      logstash_longstartupworkaround: true
+      logstash_options: |
+        queue.max_bytes: 512mb
+      logstash_longstartupworkaround: true
 #      logstash_bindprivileged: true
 #      logstash_configuration: "files/logstash.d/"
-#      logstash_configurationtemplates: [ 'test.conf.j2' ]
+      logstash_configurationtemplates: [ 'test.conf.j2' ]
