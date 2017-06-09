@@ -1,4 +1,4 @@
-eNiXHosting/logstash
+eNiXHosting.logstash
 =================
 
 A role for deploying and configuring [Logstash](https://www.elastic.co/products/logstash) on unix hosts using [Ansible](http://www.ansible.com/).
@@ -75,7 +75,7 @@ Still to do
 - Must find a way to not install plugins each time (list output check)
 - When Ansible 2.3 available widely, use logstash_plugins module
 - Use synchronize instead of copy for configuration to support deletion of files
-- Change variables to logstash__ 
+- Change variables to logstash__
 
 Changelog
 ---------
@@ -87,7 +87,7 @@ Initial version.
 License
 -------
 
-BSD
+GPLv2
 
 Author Information
 ------------------
