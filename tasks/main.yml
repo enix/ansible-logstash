@@ -34,6 +34,7 @@
     path: /usr/lib/jvm/default-java/jre/bin/java
     capability: cap_net_bind_service+epi
     state: "{{ logstash_bindprivileged | ternary('present','absent') }}"
+  when: logstash_bindprivileged is defined
   notify:
   - restart logstash
 
