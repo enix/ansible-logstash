@@ -188,4 +188,4 @@ galaxy_info:
     - logstash
 
 dependencies:
-  - eNiXHosting.elastic-repo
+  - enixhosting.elastic_repo

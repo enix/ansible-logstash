@@ -29,7 +29,7 @@ Dependencies
 
 Ansible roles, can be pulled by ansible-galaxy or by hand in roles/
 
-- `eNiXHosting.elastic-repo`: https://galaxy.ansible.com/eNiXHosting/elastic-repo/.
+- `eNiXHosting.elastic_repo`: https://galaxy.ansible.com/eNiXHosting/elastic_repo/.
 
 
 Usage
