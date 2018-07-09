@@ -80,6 +80,10 @@ Still to do
 Changelog
 ---------
 
+### 1.2.0
+
+Switch to use elastic_repo name (migration to galaxy3)
+
 ### 1.0
 
 Initial version.
