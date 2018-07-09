@@ -1,4 +1,4 @@
 ---
 # vars file for roletemplate
 
-logstash_package_state: latest
+logstash_package_state: present
