@@ -10,6 +10,7 @@ Requirements
 Supported targets:
 
 - Debian 8 "Jessie"
+- Debian 9 "Stretch"
 
 
 Role Variables
