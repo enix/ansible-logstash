@@ -81,6 +81,10 @@ Still to do
 Changelog
 ---------
 
+### 1.3.0
+
+Install libcap2-bin when needed
+
 ### 1.2.0
 
 Switch to use elastic_repo name (migration to galaxy3)
