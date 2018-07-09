@@ -4,8 +4,13 @@
 - name: Install java
   apt:
     name: default-jre-headless
-    state: latest
+    state: present
 
+- name: Install capabilities depends
+  apt:
+    name: libcap2-bin
+    state: present
+  when: logstash_bindprivileged is defined
 
 - name: Install Logstash
   apt:
