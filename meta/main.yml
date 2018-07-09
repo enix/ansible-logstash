@@ -1,4 +1,5 @@
 galaxy_info:
+  role_name: logstash
   author: Laurent CORBES <laurent.corbes@enix.fr>
   description: Ansible role to install Logstash software from Elastic.co
   company: Enix Hosting (http://www.enix.fr)
