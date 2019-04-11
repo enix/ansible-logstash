@@ -11,6 +11,10 @@ Supported targets:
 
 - Debian 8 "Jessie"
 - Debian 9 "Stretch"
+- Ubuntu 16.04 "Xenial"
+- Ubuntu 18.04 "Bionic"
+- RedHat EL 6
+- RedHat EL 7
 
 
 Role Variables
