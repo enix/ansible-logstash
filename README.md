@@ -1,4 +1,4 @@
-eNiXHosting.logstash
+enix.logstash
 =================
 
 A role for deploying and configuring [Logstash](https://www.elastic.co/products/logstash) on unix hosts using [Ansible](http://www.ansible.com/).
@@ -30,7 +30,7 @@ Dependencies
 
 Ansible roles, can be pulled by ansible-galaxy or by hand in roles/
 
-- `eNiXHosting.elastic_repo`: https://galaxy.ansible.com/eNiXHosting/elastic_repo/.
+- `enix.elastic_repo`: https://galaxy.ansible.com/enix/elastic_repo/.
 
 
 Usage
@@ -42,8 +42,8 @@ Clone this repo into your roles directory:
 
 Or use Ansible galaxy requirements.yml
 
-    # eNiXHosting.logstash galaxy role
-    - src: eNiXHosting.logstash
+    # enix.logstash galaxy role
+    - src: enix.logstash
       name: logstash
 
 And add it to your play's roles:
