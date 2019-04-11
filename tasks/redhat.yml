@@ -1,6 +1,6 @@
 ---
 
-- name: Install Logstash
+- name: RedHat: Install Logstash
   yum:
     name: logstash
     state: "{{ logstash_package_state }}"

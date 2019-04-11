@@ -85,6 +85,10 @@ Still to do
 Changelog
 ---------
 
+### 1.4.0
+
+Change Role Name to enix.logstash
+
 ### 1.3.0
 
 Install libcap2-bin when needed

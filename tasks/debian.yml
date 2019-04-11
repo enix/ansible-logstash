@@ -1,18 +1,18 @@
 ---
 
 # To be replaced by proper java role
-- name: Install java
+- name: Debian: Install java
   apt:
     name: default-jre-headless
     state: present
 
-- name: Install capabilities depends
+- name: Debian: Install capabilities depends
   apt:
     name: libcap2-bin
     state: present
   when: logstash_bindprivileged is defined
 
-- name: Install Logstash
+- name: Debian: Install Logstash
   apt:
     name: logstash
     state: "{{ logstash_package_state }}"
