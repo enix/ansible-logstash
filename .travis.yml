@@ -12,14 +12,14 @@ env:
     #   distribution_version: trusty
     #   init: /sbin/init
     #   run_opts: ""
-    # - distribution: EL
-    #   distribution_version: "7"
-    #   init: /usr/lib/systemd/systemd
-    #   run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
-    # - distribution: EL
-    #   distribution_version: "6"
-    #   init: /sbin/init
-    #   run_opts: ""
+    - distribution: EL
+      distribution_version: "7"
+      init: /usr/lib/systemd/systemd
+      run_opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+    - distribution: EL
+      distribution_version: "6"
+      init: /sbin/init
+      run_opts: ""
     - distribution: Debian
       distribution_version: stretch
       init: /lib/systemd/systemd
