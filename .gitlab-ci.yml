@@ -54,9 +54,9 @@ debian-stretch:
 #   image: ansiblecheck/ansiblecheck:centos-6
 #   <<: *ansible_test
 #
-centos-7:
-  image: ansiblecheck/ansiblecheck:centos-7
-  <<: *ansible_test
+# centos-7:
+#   image: ansiblecheck/ansiblecheck:centos-7
+#   <<: *ansible_test
 
 # archlinux-latest:
 #   image: ansiblecheck/ansiblecheck:archlinux-latest
