@@ -7,6 +7,9 @@ variables:
   script:
     - ansible --version
     - ansible-galaxy install -v -r requirements.yml
+    # Run linters. Does not fail if no errors reported
+    - ansible-lint --force-color . || true
+    - yamllint -f colored . || true    
     - ansible-playbook tests/test.yml --syntax-check
     - ansible-playbook -vvv --connection=local tests/test.yml
     - idempotence=$(mktemp)
